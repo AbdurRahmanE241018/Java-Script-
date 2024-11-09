@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let currentAge = prompt("Enter your current age: ");
+let ageLimit = 90;
+let yearsLeft = ageLimit - currentAge;
+
+// Calculating time left
+let daysLeft = yearsLeft * 365;
+let weeksLeft = yearsLeft * 52;
+let monthsLeft = yearsLeft * 12;
+let timeLeft = yearsLeft * 24;
+
+document.write("You have " + daysLeft + " days, " + weeksLeft + " weeks, and " + monthsLeft + " months," + timeLeft + " hours left.");
+
+    </script>
+</body>
+</html>
