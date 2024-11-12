@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Department Array</title>
+</head>
+<body>
+    <h3>Department Array of Objects</h3>
+    <button onclick="displayDepartments()">Show Departments</button>
+    <div id="departmentsResult"></div>
+
+    <script>
+        const departments = [
+            {
+                departmentName: "Computer Science $ Engineering",
+                HOD: "Engr. Raju Ahamed",
+                students: [
+                    { name: "Abdur Rahman", studentID: "E241018", currentSemester: 2 },
+                    { name: "Sadia", studentID: "E241060", currentSemester: 2 }
+                ]
+            },
+            {
+                departmentName: "Electrical & Telecommunication Engineering",
+                HOD: "Engr. Ibrahim Rupom",
+                students: [
+                    { name: "Saif", studentID: "ET241015", currentSemester: 2 },
+                    { name: "Sumon", studentID: "ET241056", currentSemester: 2 }
+                ]
+            }
+        ];
+
+        function displayDepartments() {
+            const resultDiv = document.getElementById("departmentsResult");
+            resultDiv.innerHTML = ""; // Clear previous results
+
+            departments.forEach(department => {
+                const deptDiv = document.createElement("div");
+                deptDiv.innerHTML = `<h4>${department.departmentName}</h4>
+                                     <p>HOD: ${department.HOD}</p>`;
+                
+                const studentList = document.createElement("ul");
+                department.students.forEach(student => {
+                    const studentItem = document.createElement("li");
+                    studentItem.innerText = `Name: ${student.name}, ID: ${student.studentID}, Semester: ${student.currentSemester}`;
+                    studentList.appendChild(studentItem);
+                });
+
+                deptDiv.appendChild(studentList);
+                resultDiv.appendChild(deptDiv);
+            });
+        }
+    </script>
+</body>
+</html>
